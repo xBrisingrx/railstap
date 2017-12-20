@@ -1,0 +1,2 @@
+class MarcaVehiculo < ApplicationRecord
+end
