@@ -1,0 +1,64 @@
+<h1 class="text-center g-mb-10">Listado de vehiculos registrados</h1>
+
+<!-- Divisor -->
+<div class="u-divider u-divider-solid u-divider-center g-brd-gray-light-v3 g-my-80">
+  <i class="fa fa-circle u-divider__icon g-bg-white g-color-gray-light-v3"></i>
+</div>
+<!-- End divisor -->
+
+<div class="row justify-content-end">
+  <%= link_to 'Nuevo', new_vehiculo_path, class: 'btn btn-primary' %>
+</div>
+<!-- Hover Rows -->
+<div class="card g-brd-darkpurple rounded-0 g-mb-10">
+  <h3 class="card-header g-bg-darkpurple g-brd-transparent g-color-white g-font-size-16 rounded-0 mb-0">
+    <i class="fa fa-bus g-mr-5"></i>
+    Listado de vehiculos registrados
+  </h3>
+
+  <div class="table-responsive">
+    <table class="table table-hover u-table--v1 mb-0">
+      <thead>
+        <tr>
+          <th>Interno</th>
+          <th>Dominio</th>
+          <th>Año</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Tipo</th>
+          <th>Nro. Chasis</th>
+          <th>Nro. Motor</th>
+          <th>Cant. Asientos</th>
+          <th>Empresa</th>
+          <th>Observaciones</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      	<% @vehiculos.each do |v| %>
+	  		<tr>
+	  			<td><%= v.interno %></td>
+	  			<td><%= v.dominio %></td>
+	  			<td><%= v.anio %></td>
+	  			<td><%= v.marca_vehiculo_id %></td>
+	  			<td><%= v.modelo_vehiculo_id %></td>
+	  			<td><%= v.tipo_vehiculo_id %></td>
+	  			<td><%= v.num_chasis %></td>
+	  			<td><%= v.num_motor %></td>
+	  			<td><%= v.cant_asientos %></td>
+	  			<td><%= v.empresa.nombre %></td>
+	  			<td><%= v.observaciones %></td>
+	  			<td>
+            <%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, 
+                edit_vehiculo_path(v), class: 'btn btn-outline-primary',  :data => {:toggle => 'tooltip'}, title: 'Editar'  %>
+            <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, 
+                  class: 'btn btn-outline-danger', :data => {:toggle => 'tooltip'}, title: 'Eliminar' %>    
+          </td>
+	  		</tr>
+      	<% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- End Hover Rows -->

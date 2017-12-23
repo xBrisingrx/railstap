@@ -1,5 +1,6 @@
 class PersonasController < ApplicationController
-  # In the index show all persona
+
+  # In the index show all personas
   def index
     @personas = Persona.all
   end
@@ -15,6 +16,7 @@ class PersonasController < ApplicationController
   end
 
   def edit
+    @empresas = Empresa.all
     @persona = Persona.find(params[:id])
   end
 
@@ -41,8 +43,7 @@ class PersonasController < ApplicationController
 
   def destroy
     @persona = Persona.find(params[:id])
-    @persona.destroy
-
+    @persona.activo = false
     redirect_to empresa_path
   end
 

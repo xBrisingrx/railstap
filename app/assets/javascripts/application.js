@@ -12,6 +12,7 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require popper.min
 //= require unify/jquery-migrate.min
 //= require unify/jquery.easing.min
 //= require unify/bootstrap
