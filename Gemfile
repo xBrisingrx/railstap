@@ -34,6 +34,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'carrierwave', '~> 1.2', '>= 1.2.1'
 gem 'devise', '~> 4.3'
 gem 'mysql2', '~> 0.4.10'
+gem "font-awesome-rails"
 
 
 # Use Capistrano for deployment
