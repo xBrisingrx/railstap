@@ -1,0 +1,15 @@
+<%= form_for @tipo, :html => {class: "g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30"} do |form| %>
+
+  <div class="form-group row g-mb-10">
+    <%= form.label :tipo, 'Tipo de vehiculo', class: "col-sm-2 col-form-label g-mb-10" %><br>
+    <div class="col-sm-9">
+      <%= form.text_field :tipo, class: "form-control" %>
+    </div>
+  </div>
+  <br>
+  <p>
+    <%= form.submit 'Registrar', class:"btn btn-success"%>
+    <%= link_to 'Cancelar', vehiculos_path(@vehiculo), class: "btn btn-danger" %>
+  </p>
+
+<% end %>

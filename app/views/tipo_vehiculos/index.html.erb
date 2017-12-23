@@ -1,0 +1,40 @@
+<h1 class="text-center g-mb-10">Listado de vehiculos registrados</h1>
+
+<!-- Divisor -->
+<div class="u-divider u-divider-solid u-divider-center g-brd-gray-light-v3 g-my-80">
+  <i class="fa fa-circle u-divider__icon g-bg-white g-color-gray-light-v3"></i>
+</div>
+<!-- End divisor -->
+
+<div class="row justify-content-end">
+  <%= link_to 'Nuevo', new_tipo_vehiculos_path, class: 'btn btn-primary' %>
+</div>
+<!-- Hover Rows -->
+<div class="card g-brd-darkpurple rounded-0 g-mb-10">
+  <h3 class="card-header g-bg-darkpurple g-brd-transparent g-color-white g-font-size-16 rounded-0 mb-0">
+    <i class="fa fa-bus g-mr-5"></i>
+    Listado de tipos de vehiculos registrados
+  </h3>
+
+  <div class="table-responsive">
+    <table class="table table-hover u-table--v1 mb-0">
+      <thead>
+        <tr>
+          <th>Tipo</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      	<% @tipo.each do |t| %>
+	  		<tr>
+	  			<td><%= t.interno %></td>
+	  			<td>
+            acciones   
+          </td>
+	  		</tr>
+      	<% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- End Hover Rows -->
