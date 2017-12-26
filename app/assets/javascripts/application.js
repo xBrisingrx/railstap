@@ -21,6 +21,7 @@
 //= require unify/hs.header
 //= require unify/hs.hamburgers
 //= require unify/jquery-validate/jquery.validate.min
+//= require unify/jquery-validate/additional-methods.min
 //= require unify/jquery-validate/messages_es
 //= require turbolinks
 
