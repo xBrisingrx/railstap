@@ -48,7 +48,11 @@
       <%= form.text_field :cuil, class: "form-control" %>
     </div>
     <div class="col-sm-5">
-      <%= form.file_field :pdf_cuil_path, class:'form-control'%>
+      <% if @persona.pdf_fecha_nacimiento_path? %>
+          <%= form.file_field :pdf_cuil_path, class:'form-control', palceholder: 'tengo algo'%>
+        <% else %>
+          <%= form.file_field :pdf_cuil_path, class:'form-control'%>
+      <% end %>
     </div>
   </div>
 

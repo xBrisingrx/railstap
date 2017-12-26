@@ -14,26 +14,31 @@
             <!-- End Responsive Toggle Button -->
 
             <!-- Logo -->
-            <a href="../../../index.html" class="navbar-brand">
+<!--             <a href="../../../index.html" class="navbar-brand">
               <img src="../../../assets/img/logo/logo-2.png" alt="Image Description">
-            </a>
+            </a> -->
             <!-- End Logo -->
 
             <!-- Navigation -->
-            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
+            <div class="js-mega-menu collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
               <ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto">
                 <li class="nav-item g-mx-20--lg">
                   <%= link_to 'Home', root_path, class: 'nav-link px-0' %>
-                
-              </a>
                 </li>
-                <li class="nav-item g-mx-20--lg">
-                    <%= link_to 'Personas', personas_path, class: 'nav-link px-0' %>
-              </a>
+                <li class="nav-item hs-has-sub-menu g-mx-20--lg">
+                    <%= link_to 'Personas', personas_path, class: 'nav-link px-0', 
+                        id: 'nav-personas', 
+                        :aria => {:haspopup  => "true", :expanded => "false", :controls => "submenu-personas"} %>
+                <!-- Sub menu personas -->
+                  <ul class="hs-sub-menu list-unstyled g-text-transform-none g-brd-top g-brd-primary g-brd-top-2 g-min-width-200 g-mt-20 g-mt-10--lg--scrolling" id="submenu-personas" aria-labelledby="nav-personas">
+                    <li class="dropdown-item">
+                      <%= link_to 'Registrar persona', new_persona_path, class: 'nav-link g-px-0 text-muted' %>
+                    </li>
+                  </ul>
+                <!-- End sub menu personas -->
                 </li>
                 <li class="nav-item g-mx-20--lg active">
-                  <a href="#!" class="nav-link px-0">Vehiculos
-                <span class="sr-only">(current)</span>
+                 <%= link_to 'Vehiculos', vehiculos_path, class: 'nav-link g-px-0' %>
               </a>
                 </li>
                 <li class="nav-item g-mx-20--lg">
@@ -54,6 +59,28 @@
                 <li class="nav-item g-ml-20--lg g-mr-0--lg">
                   <a href="#!" class="nav-link px-0">Seguridad
               </a>
+                </li>
+                <li class="nav-item hs-has-sub-menu g-mx-20--lg">
+                    <%= link_to '<i class="fa fa-cog" aria-hidden="true"></i>'.html_safe,
+                        class: 'nav-link px-0', 
+                        id: 'nav-config', 
+                        :aria => {:haspopup  => "true", :expanded => "false", :controls => "submenu-personas"} %>
+                <!-- Sub menu personas -->
+                  <ul class="hs-sub-menu list-unstyled g-text-transform-none g-brd-top g-brd-primary g-brd-top-2 g-min-width-200 g-mt-20 g-mt-10--lg--scrolling" id="submenu-config" aria-labelledby="nav-config">
+                    <li class="dropdown-item">
+                      <%= link_to 'Empresas', new_persona_path, class: 'nav-link g-px-0 text-muted' %>
+                    </li>
+                    <li class="dropdown-item">
+                      <%= link_to 'Marcas', new_persona_path, class: 'nav-link g-px-0 text-muted' %>
+                    </li>
+                    <li class="dropdown-item">
+                      <%= link_to 'Modelos', new_persona_path, class: 'nav-link g-px-0 text-muted' %>
+                    </li>
+                    <li class="dropdown-item">
+                      <%= link_to 'Tipo vehiculo', new_persona_path, class: 'nav-link g-px-0 text-muted' %>
+                    </li>
+                  </ul>
+                <!-- End sub menu personas -->
                 </li>
               </ul>
             </div>
