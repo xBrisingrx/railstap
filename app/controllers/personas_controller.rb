@@ -12,7 +12,7 @@ class PersonasController < ApplicationController
 
   def new
     @persona = Persona.new
-    @empresas = Empresa.all
+    # @empresas = Empresa.all
   end
 
   def edit
@@ -27,7 +27,7 @@ class PersonasController < ApplicationController
     if @persona.save
       redirect_to @persona, notice: "La persona #{@persona.nombre} ha sido registrado con exito"
     else
-      render 'new'
+      render new_persona_path
     end # end if
   end # End create
 
