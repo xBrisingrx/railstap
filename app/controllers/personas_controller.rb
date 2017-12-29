@@ -55,6 +55,15 @@ class PersonasController < ApplicationController
       end
   end
 
+  def cuil_unico
+    # Verifico si existe una persona con ese cuil, retorna un booleano
+     @existe_cuil =  Persona.exists?(cuil: params[:persona][:cuil])
+      respond_to do |format|
+        format.json { render json: !@existe_cuil}
+      end
+  end
+
+
 
   # Declaro los parametros que son permitidos ingresar por la vista
   private

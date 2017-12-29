@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :personas do
   	collection do
   		get 'dni_unico'
+  		get 'cuil_unico'
   	end
   end
 

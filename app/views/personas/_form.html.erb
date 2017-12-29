@@ -123,12 +123,15 @@
               maxlength: 9,
               remote:  "dni_unico"
             },
-        'persona[cuil]': {number: true, minlength: 10, maxlength: 12},
+        'persona[cuil]': {number: true, minlength: 10, maxlength: 12, remote: 'cuil_unico'},
         'persona[telefono]': {number: true, minlength: 5}
       },
       messages: {
         'persona[dni]': {
           remote: 'El DNI pertenece a otra persona'
+        },
+        'persona[cuil]': {
+          remote: 'El CUIL pertenece a otra persona'
         }
       }
     });
