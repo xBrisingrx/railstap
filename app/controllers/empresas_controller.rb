@@ -48,6 +48,6 @@ class EmpresasController < ApplicationController
   # Declaro los parametros que son permitidos ingresar por la vista
   private
   def empresa_params
-    params.require(:empresa).permit(:cuit, :nombre, :activo)
+    params.require(:empresa).permit(:cuit, :nombre, :categoria, :activo)
   end
 end
