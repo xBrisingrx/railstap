@@ -47,6 +47,14 @@ class PersonasController < ApplicationController
     redirect_to empresa_path
   end
 
+  def dni_unico
+    # Verifico si existe una persona con ese dni, retorna un booleano
+     @existe_dni =  Persona.exists?(dni: params[:persona][:dni])
+      respond_to do |format|
+        format.json { render json: !@existe_dni}
+      end
+  end
+
 
   # Declaro los parametros que son permitidos ingresar por la vista
   private

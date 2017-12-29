@@ -26,6 +26,9 @@
     <%= form.label :dni, 'DNI (*)', class: "col-sm-2 col-form-label g-mb-10" %><br>
     <div class="col-sm-3">
       <%= form.text_field :dni, class: "form-control", required: true %>
+      <% if @persona.errors[:dni].any? %>
+        <small class="form-control-feedback"><%= @persona.errors[:dni].first %></small>
+      <% end %>
     </div>
     <label class="form-check-inline u-check g-pl-25">
       <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" id='check_vencimiento_dni' value="">
@@ -103,19 +106,30 @@
 <script type="text/javascript">
 
     $('#form_personas').validate({
+
       rules: {
-        'persona[nombre]': { lettersonly: true },
-        'persona[apellido]': { lettersonly: true },
-        'persona[nacionalidad]': { lettersonly: true },
+        'persona[nombre]': { lettersonly: true, minlength: 3 },
+        'persona[apellido]': { lettersonly: true,  minlength: 3},
+        'persona[nacionalidad]': { lettersonly: true, minlength: 3 },
         'persona[fecha_vencimiento_dni]': {
           // Si esta check el vencimiento dni es requerido ingresar la fecha
           required: function (element){
             return $('#check_vencimiento_dni').is(':checked');
           }
         },
-        'persona[dni]': {number: true},
-        'persona[cuil]': {number: true},
-        'persona[telefono]': {number: true}
+        'persona[dni]': {
+              number: true, 
+              minlength: 7, 
+              maxlength: 9,
+              remote:  "dni_unico"
+            },
+        'persona[cuil]': {number: true, minlength: 10, maxlength: 12},
+        'persona[telefono]': {number: true, minlength: 5}
+      },
+      messages: {
+        'persona[dni]': {
+          remote: 'El DNI pertenece a otra persona'
+        }
       }
     });
 
