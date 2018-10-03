@@ -14,6 +14,7 @@ class VehiculosController < ApplicationController
     @vehiculo = Vehiculo.new
     @empresas = Empresa.all
     @marcas = MarcaVehiculo.all
+    @modelos_db = ModeloVehiculo.all
     @tipos = TipoVehiculo.all
   end
 

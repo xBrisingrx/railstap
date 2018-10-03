@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
 
-  resources :empresas, :vehiculos, :tipo_vehiculos
+  get '/modelo_vehiculos/ajax_modelos', 
+    to: 'modelo_vehiculos#ajax_modelos', 
+    as: 'ajax_modelos'
+
+  # get '/marca_vehiculos/ajax_marcas', to: 'marca_vehiculos#ajax_marcas', as: 'ajax_marcas'
+
+  resources :empresas, :vehiculos, :tipo_vehiculos, :marca_vehiculos,:modelo_vehiculos
 
   resources :personas do
   	collection do
@@ -13,5 +19,6 @@ Rails.application.routes.draw do
   end
 
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+
 end

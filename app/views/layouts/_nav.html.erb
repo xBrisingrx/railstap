@@ -39,36 +39,29 @@
                 </li>
                 <li class="nav-item g-mx-20--lg active">
                  <%= link_to 'Vehiculos', vehiculos_path, class: 'nav-link g-px-0' %>
-              </a>
                 </li>
                 <li class="nav-item g-mx-20--lg">
-                  <a href="#!" class="nav-link px-0">Contratos
-                
-              </a>
+                  <a href="#!" class="nav-link px-0">Contratos</a>
                 </li>
                 <li class="nav-item g-mx-20--lg">
-                  <a href="#!" class="nav-link px-0">Documentos
-                
-              </a>
+                  <a href="#!" class="nav-link px-0">Documentos</a>
                 </li>
                 <li class="nav-item g-ml-20--lg g-mr-0--lg">
-                  <a href="#!" class="nav-link px-0">Informes
-              </a>
-              </a>
+                  <a href="#!" class="nav-link px-0">Informes</a>
                 </li>
                 <li class="nav-item g-ml-20--lg g-mr-0--lg">
-                  <a href="#!" class="nav-link px-0">Seguridad
-              </a>
+                  <a href="#!" class="nav-link px-0">Seguridad</a>
                 </li>
+
                 <li class="nav-item hs-has-sub-menu g-mx-20--lg">
-                    <%= link_to '<i class="fa fa-cog" aria-hidden="true"></i>'.html_safe,
+                    <%= link_to 'Configuracion', '#!',
                         class: 'nav-link px-0', 
                         id: 'nav-config', 
-                        :aria => {:haspopup  => "true", :expanded => "false", :controls => "submenu-personas"} %>
+                        :aria => {:haspopup  => "true", :expanded => "false", :controls => "submenu-config"} %>
                 <!-- Sub menu personas -->
                   <ul class="hs-sub-menu list-unstyled g-text-transform-none g-brd-top g-brd-primary g-brd-top-2 g-min-width-200 g-mt-20 g-mt-10--lg--scrolling" id="submenu-config" aria-labelledby="nav-config">
                     <li class="dropdown-item">
-                      <%= link_to 'Empresas', new_persona_path, class: 'nav-link g-px-0 text-muted' %>
+                      <%= link_to 'Empresas', empresas_path, class: 'nav-link g-px-0 text-muted' %>
                     </li>
                     <li class="dropdown-item">
                       <%= link_to 'Marcas', new_persona_path, class: 'nav-link g-px-0 text-muted' %>

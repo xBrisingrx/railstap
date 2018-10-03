@@ -1,1 +1,45 @@
-<h1>Index de empresas</h1>
+<h1 class="text-center g-mb-10">Listado de empresas registradas</h1>
+
+<!-- Divisor -->
+<div class="u-divider u-divider-solid u-divider-center g-brd-gray-light-v3 g-my-80">
+  <i class="fa fa-circle u-divider__icon g-bg-white g-color-gray-light-v3"></i>
+</div>
+<!-- End divisor -->
+
+<div class="row justify-content-end">
+  <%= link_to 'Nuevo', new_empresa_path, class: 'btn btn-primary' %>
+</div>
+<!-- Hover Rows -->
+<div class="card g-brd-darkpurple rounded-0 g-mb-10">
+  <h3 class="card-header g-bg-darkpurple g-brd-transparent g-color-white g-font-size-16 rounded-0 mb-0">
+    <i class="fa fa-user g-mr-5"></i>
+    Listado de empresas registradas
+  </h3>
+
+  <div class="table-responsive">
+    <table class="table table-hover u-table--v1 mb-0">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>CUIT</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      	<% @empresas.each do |e| %>
+	  		<tr>
+	  			<td><%= e.nombre %></td>
+	  			<td><%= e.cuit %></td>
+	  			<td>
+            		<%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, 
+                				edit_empresa_path(e), class: 'btn btn-outline-primary',  
+                				:data => {:toggle => 'tooltip'}, title: 'Editar' %>   
+          		</td>
+	  		</tr>
+      	<% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- End Hover Rows -->

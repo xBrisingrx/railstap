@@ -1,0 +1,12 @@
+$('#vehiculo_modelo_vehiculo_id').find('option').remove().end().append('<option disabled selected>Selecciones el modelo</option>');
+// $(modelos_vehiculos).each(function(i,element){
+//   $('#vehiculo_modelo_vehiculo_id').append("<option value="+element.id+">"+element.modelo+"</option>");
+// });
+
+<% @modelos.each do |m| %>
+	$('#vehiculo_modelo_vehiculo_id').append('<option value="<%= m.id %>"><%= m.modelo %></option>');
+<% end %>
+
+console.log('respuesta');
+
+// no , lo mencionan mucho pero no eh leido 

@@ -12,11 +12,10 @@ class PersonasController < ApplicationController
 
   def new
     @persona = Persona.new
-    # @empresas = Empresa.all
+    @empresas = Empresa.all
   end
 
   def edit
-    @empresas = Empresa.all
     @persona = Persona.find(params[:id])
   end
 

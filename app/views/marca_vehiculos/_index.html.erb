@@ -1,0 +1,42 @@
+<div id="marcas-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">ajax marcas</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="row justify-content-center">
+        <%= form_for @nueva_marca, html: {class: "g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30", id: 'form_marca_vehiculo'} do |form| %>
+
+          <div class="row form-group g-mb-10">
+            <%= form.label :marca %><br>
+            <%= form.text_field :marca, class: "form-control" %>
+
+            <%= form.submit 'Nueva', class:"btn btn-success"%>
+          </div>
+        <% end %>
+      </div>
+      <div class="table-responsive">
+        <table id="tabla_marcas" class="table table-hover u-table--v1 mb-0">
+          <thead>
+            <tr>
+              <th>Marca vehiculo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Se llena con ajax -->
+            <% @marcas.each do |m| %>
+              <tr>
+                <td><%= m.marca %></td>
+                <td><%= m.id %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

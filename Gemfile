@@ -36,6 +36,10 @@ gem 'devise', '~> 4.3'
 gem 'mysql2', '~> 0.4.10'
 gem "font-awesome-rails"
 
+# Datatables
+# gem 'jquery-datatables-rails'
+# gem 'ajax-datatables-rails'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
